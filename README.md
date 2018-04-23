@@ -33,7 +33,8 @@ Hệ thống quản lý học sinh về cơ bản thực hiện và xây dựng 
  -Công cụ lập trình: Visual Studio, SQL Server
  
  -Ngôn ngữ lập trình: C#
- LỜI CẢM ƠN
+ 
+# LỜI CẢM ƠN
 Trong suốt quá trình học tập môn Nhập môn Công nghệ Phần mềm và hoàn thành đồ án Quản lý học sinh, nhóm đã nhận được những kiến thức vô cùng bổ ích từ thầy Nguyễn Công Hoan và thầy Thái Hài Dương. Thông qua việc hoàn thành đồ án, nhóm chúng em xin được gửi lời cám ơn đến các thầy vì sự tận tâm và vì những gì thầy đã truyền đạt cho chúng em.
 Trân trọng.
 # LIÊN HỆ 
