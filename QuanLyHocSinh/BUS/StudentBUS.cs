@@ -47,15 +47,15 @@ namespace QuanLyHocSinh.BUS
             
             return AcceptStudentDAO.Instance.Update(Oldmahs, student);
         }
-        public bool Insert(DataGridView data)
-        {
-            DataGridViewRow row = data.SelectedCells[0].OwningRow;
+        //public bool Insert(DataGridView data)
+        //{
+        //    DataGridViewRow row = data.SelectedCells[0].OwningRow;
             
 
-            Student student = new Student();
+        //    Student student = new Student();
 
-            return AcceptStudentDAO.Instance.Insert(student);
-        }
+        //    return AcceptStudentDAO.Instance.Insert(student);
+        //}
     }
 }
 
