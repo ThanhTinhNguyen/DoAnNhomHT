@@ -1,5 +1,6 @@
 
-  
+   ![68747470733a2f2f692e696d6775722e636f6d2f30646451596d332e706e67](https://user-images.githubusercontent.com/32485795/39767840-e08a1d9c-5311-11e8-9238-8762067cea87.png)
+
    # TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN
 
 # ĐỒ ÁN QUẢN LÍ HỌC SINH
