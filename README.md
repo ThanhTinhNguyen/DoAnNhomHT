@@ -1,6 +1,6 @@
- 
-   # ĐẠI HỌC QUỐC GIA TP.HỒ CHÍ MINH
-  # TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN
+
+  
+   # TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN
 
 # ĐỒ ÁN QUẢN LÍ HỌC SINH
 
