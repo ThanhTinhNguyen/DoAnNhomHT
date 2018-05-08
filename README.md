@@ -1,4 +1,4 @@
-   https://www.uit.edu.vn/sites/vi/files/banner.png
+ 
    # ĐẠI HỌC QUỐC GIA TP.HỒ CHÍ MINH
   # TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN
 
