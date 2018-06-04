@@ -23,29 +23,46 @@ namespace QuanLyHocSinh
 
         void LoadGrade()
         {
-            GradeBUS.Instance.GetGrade(cbGrade);
-            cbGrade.DisplayMember = "MAKHOI";
+            GradeBUS.Instance.GetListGrade(cbGrade);
+            cbGrade.ValueMember = "MAKHOI";
+            cbGrade.DisplayMember = "TENKHOI";
         }
 
         void LoadClass(string id)
         {
             ClassBUS.Instance.GetListClass(cbClass, id);
-            cbClass.DisplayMember = "TENLOP";
+            
         }
 
 
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = "";
-
-            if (cbGrade.SelectedItem == null)
-                return;
-            Grade selected = cbGrade.SelectedItem as Grade;
-            id = selected.Makhoi;
+            string id =cbGrade.SelectedValue.ToString();    
             LoadClass(id);
+            cbClass.ValueMember="MALOP";
+            cbClass.DisplayMember = "TENLOP";
         }
 
-        
+        private void btnNewStudentList_Click(object sender, EventArgs e)
+        {
+
+            StudentBUS.Instance.WatchNewStudent(dgvClassList);
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string malop = cbClass.SelectedValue.ToString();
+            if (ClassBUS.Instance.InsertNewStudent(dgvClassList,malop))
+            {
+                MessageBox.Show("Thêm thành công");
+                btnNewStudentList_Click(sender, e);
+                
+            }
+            else
+            {
+                MessageBox.Show("Thêm không thành công");
+            }
+        }
     }
 }

@@ -33,18 +33,29 @@ namespace QuanLyHocSinh.DAO
         {
             List<Class> listclass = new List<Class>();
             object[] par = new object[] { id };
-            string query = "SELECT* FROM LOP AS L INNER JOIN KHOI AS K ON L.MAKHOI = K.MAKHOI WHERE K.MAKHOI = @ID ";
+            string query = "SELECT* FROM LOP WHERE MAKHOI = @ID ";
 
-            DataTable data = DataProvider.Instance.ExcuteQuery(query,par);
+            DataTable data = DataProvider.Instance.ExcuteQuery1(query,par);
             foreach (DataRow item in data.Rows)
             {
-                Class _class = new Class();
+                Class _class = new Class(item);
                 listclass.Add(_class);
 
             }
             return listclass;
         }
 
+        public bool InsertNewStudent(Student student,string malop)
+        {
+            string query = "INSERT INTO HOCSINH VALUES( @MaHS , @Hoten , @Gioitinh , @Ngaysinh , @Diachi , @Email , @Malop )";
+            object[] para = new object[] { student.Mahs, student.Hoten, student.Gioitinh, student.Ngaysinh, student.Diachi, student.Email, malop };
+            if (DataProvider.Instance.ExcuteNonQuery(query, para) > 0)
+            {
+                return true;
 
+            }
+
+            return false;
+        }
     }
 }

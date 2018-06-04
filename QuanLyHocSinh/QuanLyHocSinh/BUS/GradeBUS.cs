@@ -24,10 +24,11 @@ namespace QuanLyHocSinh.BUS
             set => instance = value;
         }
 
-        public void GetGrade(ComboBox box)
+        public void GetListGrade(ComboBox box)
         {
-            List<Grade> listgrades = GradeDAO.Instance.GetListGrades();
+            List<Grade> listgrades = GradeDAO.Instance.GetGrade();
             box.DataSource = listgrades;
+           
 
 
         }

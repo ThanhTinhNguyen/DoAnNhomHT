@@ -38,7 +38,7 @@ namespace QuanLyHocSinh.DAO
                 conn.Open(); //Mở kết nối
 
                 SqlCommand command = new SqlCommand(query, conn);//Tạo command
-                //command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
                 if (parameter != null)
                 {
@@ -48,7 +48,7 @@ namespace QuanLyHocSinh.DAO
 
                     foreach (string item in temp)
                     {
-                        if (item[0] == '@')
+                        if (item != string.Empty && item[0] == '@')
                             listPar.Add(item);
                     }
 
@@ -118,7 +118,7 @@ namespace QuanLyHocSinh.DAO
                 
 
 
-                //command.CommandType = commandType;
+                
                 if (parameter != null)
                 {
                     string[] temp = query.Split(' ');
@@ -133,7 +133,7 @@ namespace QuanLyHocSinh.DAO
 
                     for (int i = 0; i < parameter.Length; i++)
                     {
-                        command.Parameters.Add(listPar[i], parameter[i]);
+                        command.Parameters.AddWithValue(listPar[i], parameter[i]);
                     }
                 }
 

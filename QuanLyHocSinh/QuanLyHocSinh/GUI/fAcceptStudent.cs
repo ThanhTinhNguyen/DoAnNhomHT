@@ -20,11 +20,12 @@ namespace QuanLyHocSinh.GUI
             InitializeComponent();
         }
 
+        
 
-       
-      
+        
         private void btnWatch_Click(object sender, EventArgs e)
         {
+          
 
             StudentBUS.Instance.Watch(dgvInfoStudent);
  
@@ -59,6 +60,7 @@ namespace QuanLyHocSinh.GUI
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            
             if (StudentBUS.Instance.Insert(dgvInfoStudent))
             {
                 MessageBox.Show("Thêm thành công");
@@ -70,6 +72,10 @@ namespace QuanLyHocSinh.GUI
             }
         }
 
+        private void dgvInfoStudent_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
         
         private void btnPrevious_Click(object sender, EventArgs e)
         {
@@ -79,6 +85,21 @@ namespace QuanLyHocSinh.GUI
         private void btnNext_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvInfoStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex>=0)
+            {
+                DataGridViewRow row = this.dgvInfoStudent.Rows[e.RowIndex];
+                txbIDStudent.Text = row.Cells["MaHS"].Value.ToString();
+                txbAddress.Text = row.Cells["DiaChi"].Value.ToString();
+                txbEmail.Text = row.Cells["Email"].Value.ToString();
+                txbSex.Text = row.Cells["GioiTinh"].Value.ToString();
+                dtpDate.Value = (DateTime)row.Cells["NgaySinh"].Value;
+                txbName.Text = row.Cells["HoTen"].Value.ToString();
+                txbMalop.Text = row.Cells["MaLop"].Value.ToString();
+            }
         }
     }
 }

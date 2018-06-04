@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.pnCreateStudentList = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbNumber = new System.Windows.Forms.Label();
             this.gbInfoStudent = new System.Windows.Forms.GroupBox();
-            this.cbName = new System.Windows.Forms.ComboBox();
-            this.lbName = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbClass = new System.Windows.Forms.ComboBox();
             this.lbClass = new System.Windows.Forms.Label();
             this.cbGrade = new System.Windows.Forms.ComboBox();
             this.lbGrade = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNewClass = new System.Windows.Forms.Button();
@@ -51,73 +49,44 @@
             // 
             // pnCreateStudentList
             // 
-            this.pnCreateStudentList.Controls.Add(this.btnUpdate);
-            this.pnCreateStudentList.Controls.Add(this.textBox1);
-            this.pnCreateStudentList.Controls.Add(this.lbNumber);
             this.pnCreateStudentList.Controls.Add(this.gbInfoStudent);
             this.pnCreateStudentList.Location = new System.Drawing.Point(1, 2);
             this.pnCreateStudentList.Name = "pnCreateStudentList";
-            this.pnCreateStudentList.Size = new System.Drawing.Size(603, 154);
+            this.pnCreateStudentList.Size = new System.Drawing.Size(239, 154);
             this.pnCreateStudentList.TabIndex = 0;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(512, 28);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(368, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // lbNumber
-            // 
-            this.lbNumber.AutoSize = true;
-            this.lbNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumber.Location = new System.Drawing.Point(281, 31);
-            this.lbNumber.Name = "lbNumber";
-            this.lbNumber.Size = new System.Drawing.Size(63, 19);
-            this.lbNumber.TabIndex = 2;
-            this.lbNumber.Text = "Mã HS:";
             // 
             // gbInfoStudent
             // 
-            this.gbInfoStudent.Controls.Add(this.cbName);
-            this.gbInfoStudent.Controls.Add(this.lbName);
+            this.gbInfoStudent.Controls.Add(this.comboBox1);
+            this.gbInfoStudent.Controls.Add(this.label1);
             this.gbInfoStudent.Controls.Add(this.cbClass);
             this.gbInfoStudent.Controls.Add(this.lbClass);
             this.gbInfoStudent.Controls.Add(this.cbGrade);
             this.gbInfoStudent.Controls.Add(this.lbGrade);
             this.gbInfoStudent.Location = new System.Drawing.Point(3, 3);
             this.gbInfoStudent.Name = "gbInfoStudent";
-            this.gbInfoStudent.Size = new System.Drawing.Size(250, 144);
+            this.gbInfoStudent.Size = new System.Drawing.Size(231, 144);
             this.gbInfoStudent.TabIndex = 0;
             this.gbInfoStudent.TabStop = false;
             this.gbInfoStudent.Text = "Thông tin học sinh";
             // 
-            // cbName
+            // comboBox1
             // 
-            this.cbName.FormattingEnabled = true;
-            this.cbName.Location = new System.Drawing.Point(97, 106);
-            this.cbName.Name = "cbName";
-            this.cbName.Size = new System.Drawing.Size(121, 21);
-            this.cbName.TabIndex = 5;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(97, 107);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
             // 
-            // lbName
+            // label1
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(8, 108);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(46, 19);
-            this.lbName.TabIndex = 4;
-            this.lbName.Text = "Sỉ số:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sỉ Số";
             // 
             // cbClass
             // 
@@ -148,7 +117,7 @@
             this.cbGrade.Name = "cbGrade";
             this.cbGrade.Size = new System.Drawing.Size(121, 21);
             this.cbGrade.TabIndex = 1;
-
+            this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
             // 
             // lbGrade
             // 
@@ -160,38 +129,47 @@
             this.lbGrade.TabIndex = 0;
             this.lbGrade.Text = "Khối:";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(530, 163);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(95, 36);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(16, 162);
+            this.btnSave.Location = new System.Drawing.Point(530, 205);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(95, 36);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(147, 162);
+            this.btnDelete.Location = new System.Drawing.Point(530, 247);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(95, 36);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnNewClass
             // 
-            this.btnNewClass.Location = new System.Drawing.Point(270, 162);
+            this.btnNewClass.Location = new System.Drawing.Point(530, 289);
             this.btnNewClass.Name = "btnNewClass";
-            this.btnNewClass.Size = new System.Drawing.Size(75, 23);
+            this.btnNewClass.Size = new System.Drawing.Size(95, 36);
             this.btnNewClass.TabIndex = 5;
             this.btnNewClass.Text = "Lớp Mới";
             this.btnNewClass.UseVisualStyleBackColor = true;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(404, 162);
+            this.btnExit.Location = new System.Drawing.Point(530, 331);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(95, 36);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -199,27 +177,26 @@
             // dgvClassList
             // 
             this.dgvClassList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClassList.Location = new System.Drawing.Point(4, 191);
+            this.dgvClassList.Location = new System.Drawing.Point(4, 162);
             this.dgvClassList.Name = "dgvClassList";
-            this.dgvClassList.Size = new System.Drawing.Size(596, 198);
+            this.dgvClassList.Size = new System.Drawing.Size(520, 227);
             this.dgvClassList.TabIndex = 6;
             // 
             // fCreateClassList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 401);
+            this.ClientSize = new System.Drawing.Size(637, 401);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvClassList);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.pnCreateStudentList);
             this.Controls.Add(this.btnNewClass);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.pnCreateStudentList);
             this.Name = "fCreateClassList";
             this.Text = "Lập Danh Sách Lớp";
-
             this.pnCreateStudentList.ResumeLayout(false);
-            this.pnCreateStudentList.PerformLayout();
             this.gbInfoStudent.ResumeLayout(false);
             this.gbInfoStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassList)).EndInit();
@@ -232,10 +209,6 @@
         private System.Windows.Forms.Panel pnCreateStudentList;
         private System.Windows.Forms.GroupBox gbInfoStudent;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbNumber;
-        private System.Windows.Forms.ComboBox cbName;
-        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.ComboBox cbClass;
         private System.Windows.Forms.Label lbClass;
         private System.Windows.Forms.ComboBox cbGrade;
@@ -245,5 +218,7 @@
         private System.Windows.Forms.Button btnNewClass;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridView dgvClassList;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

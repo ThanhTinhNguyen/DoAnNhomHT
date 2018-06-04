@@ -30,5 +30,24 @@ namespace QuanLyHocSinh.BUS
             box.DataSource = classes;
 
         }
+        public bool InsertNewStudent(DataGridView data,string malop)
+        {
+
+            DataGridViewRow row = data.SelectedCells[0].OwningRow;
+
+            string mahs = row.Cells["MaHS"].Value.ToString();
+            string hoten = row.Cells["HoTen"].Value.ToString();
+            string gioitinh = row.Cells["GioiTinh"].Value.ToString();
+            //DateTime ngaysinh = DateTime.ParseExact(row.Cells["NgaySinh"].Value.ToString(), "yyyy-MM-dd HH:mm:ss", null);
+            DateTime ngaysinh = (DateTime)row.Cells["NgaySinh"].Value;
+            string diachi = row.Cells["DiaChi"].Value.ToString();
+            string mail = row.Cells["Email"].Value.ToString();
+            
+
+            Student student = new Student() { Mahs = mahs, Hoten = hoten, Gioitinh = gioitinh, Ngaysinh = ngaysinh, Diachi = diachi, Email = mail, Malop=malop };
+
+
+            return ClassDAO.Instance.InsertNewStudent(student,malop);
+        }
     }
 }

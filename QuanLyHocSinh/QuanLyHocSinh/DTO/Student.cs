@@ -10,6 +10,31 @@ namespace QuanLyHocSinh.DTO
     public class Student
     {
 
+        //public Student(string mahs, string hoten,string gioitinh,DateTime ngaysinh,string diachi,string email,string malop)
+        //{
+        //    this.Mahs =mahs;
+        //    this.Hoten = hoten;
+        //    this.Gioitinh = gioitinh;
+        //    this.Ngaysinh = ngaysinh;
+        //    this.Diachi = diachi;
+        //    this.Email = email;
+        //    this.Malop = malop;
+
+        //}
+
+        //public Student(DataRow row)
+        //{
+        //    string mahs = row["MaHS"].ToString();
+        //    string hoten = row["HoTen"].ToString();
+        //    string gioitinh = row["GioiTinh"].ToString();
+        //    //DateTime ngaysinh = DateTime.ParseExact(row.Cells["NgaySinh"].Value.ToString(), "yyyy-MM-dd HH:mm:ss", null);
+        //    DateTime ngaysinh = (DateTime)row["NgaySinh"];
+        //    string diachi = row["DiaChi"].ToString();
+        //    string email = row["Email"].ToString();
+        //    string malop = row["Malop"].ToString();
+
+        //}
+
         private string mahs;
 
         public string Mahs { get => mahs; set => mahs = value; }

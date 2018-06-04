@@ -110,6 +110,9 @@
     <EmbeddedResource Include="GUI\fAcceptStudent.resx">
       <DependentUpon>fAcceptStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fCreateClassList.resx">
+      <DependentUpon>fCreateClassList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>

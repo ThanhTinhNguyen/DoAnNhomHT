@@ -20,11 +20,11 @@ namespace QuanLyHocSinh.DAO
 
         private GradeDAO() { }
 
-        public List<Grade> GetListGrades()
+        public List<Grade> GetGrade()
         {
             List<Grade> gradelist = new List<Grade>();
 
-            string query = "SELECT * FROM KHOI";
+            string query = "USP_GETGRADELIST";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)

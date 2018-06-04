@@ -23,37 +23,26 @@ namespace QuanLyHocSinh.DAO
 
         public DataTable LoadStudentList()
         {
-            //List<Student> studentList = new List<Student>();
+            
 
-            return  DataProvider.Instance.ExcuteQuery("USP_GETSTUDENTLIST");
-
-            //foreach (DataRow item in data.Rows)
-            //{
-            //    string mahs = item["MaHS"].ToString();
-            //    string hoten = item["Hoten"].ToString();
-            //    //DateTime.ParseExact(txtPunchDate.Text, "yyyy-MM-dd HH:mm:ss", null);
-            //    DateTime ngaysinh = (DateTime)item["Ngaysinh"];
-            //    string gioitinh = item["Gioitinh"].ToString();
-            //    string diachi = item["Diachi"].ToString();
-            //    string email = item["Email"].ToString();
-            //    Student student = new Student(mahs, hoten, gioitinh, ngaysinh, diachi, email);
-
-            //    studentList.Add(student);
-
-
-            //}
-
-           // return studentList;
+           return DataProvider.Instance.ExcuteQuery("USP_GETSTUDENTLIST");
 
         }
 
-        
+        public DataTable LoadNewStudentList(string Malop)
+        {
+            object[] para = new object[] { Malop };
+            return DataProvider.Instance.ExcuteQuery1("SELECT* FROM HOCSINH WHERE MALOP= @MALOP ",para);
+
+        }
+
+
 
         public bool Delete(string mahs)
 
         {
             object[] para = new object[] { mahs };
-            if (DataProvider.Instance.ExcuteNonQuery1("DELETE HOCSINH WHERE MAHS = @MaHS ", para) > 0)
+            if (DataProvider.Instance.ExcuteNonQuery("DELETE HOCSINH WHERE MAHS = @MaHS ", para) > 0)
             {
                 return true;
 
@@ -63,9 +52,9 @@ namespace QuanLyHocSinh.DAO
 
         public bool Update(string mahs, Student student)
         {
-            string query = "UPDATE HOCSINH SET HOTEN= @Hoten , GIOITINH= @Gioitinh , NGAYSINH= @Ngaysinh , DIACHI= @Diachi , EMAIL= @Email WHERE MAHS = @OldMaHS";
-            object[] para = new object[] {student.Hoten, student.Gioitinh, student.Ngaysinh, student.Diachi, student.Email,mahs };
-            if (DataProvider.Instance.ExcuteNonQuery1(query, para) > 0)
+            string query = "UPDATE HOCSINH SET HOTEN= @Hoten , GIOITINH= @Gioitinh , NGAYSINH= @Ngaysinh , DIACHI= @Diachi , EMAIL= @Email ,MALOP= @Malop WHERE MAHS = @OldMaHS";
+            object[] para = new object[] {student.Hoten, student.Gioitinh, student.Ngaysinh, student.Diachi, student.Email,student.Malop,mahs };
+            if (DataProvider.Instance.ExcuteNonQuery(query, para) > 0)
             {
                 return true;
 
