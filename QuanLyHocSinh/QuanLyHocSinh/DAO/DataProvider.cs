@@ -218,5 +218,39 @@ namespace QuanLyHocSinh.DAO
 
             return data;
         }
+        public object ExcuteScalar1(string query, object[] parameter = null)
+
+        {
+            object data = 0;
+            using (SqlConnection conn = new SqlConnection(connectionSTR))//Sử dụng using đê giải phóng bộ nhớ
+            {
+                conn.Open(); //Mở kết nối
+
+                SqlCommand command = new SqlCommand(query, conn);//Tạo command
+
+                if (parameter != null)
+                {
+                    string[] temp = query.Split(' ');
+
+                    List<string> listPar = new List<string>();
+
+                    foreach (string item in temp)
+                    {
+                        if (item != string.Empty && item[0] == '@')
+                            listPar.Add(item);
+                    }
+
+                    for (int i = 0; i < parameter.Length; i++)
+                    {
+                        command.Parameters.AddWithValue(listPar[i], parameter[i]);
+                    }
+                }
+
+                data = command.ExecuteScalar();
+                conn.Close();
+            }
+
+            return data;
+        }
     }
 }

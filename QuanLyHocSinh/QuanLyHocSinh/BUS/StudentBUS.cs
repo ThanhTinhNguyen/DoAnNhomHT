@@ -36,6 +36,10 @@ namespace QuanLyHocSinh.BUS
             data.DataSource = AcceptStudentDAO.Instance.LoadNewStudentList(malop);
 
         }
+        public void LoadClassInfo(DataGridView data,string malop)
+        {
+            data.DataSource = AcceptStudentDAO.Instance.LoadNewStudentList(malop);
+        }
 
 
 

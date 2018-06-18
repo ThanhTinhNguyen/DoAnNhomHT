@@ -19,6 +19,7 @@ namespace QuanLyHocSinh
             InitializeComponent();
             LoadGrade();
             
+            
         }
 
         void LoadGrade()
@@ -42,9 +43,11 @@ namespace QuanLyHocSinh
             LoadClass(id);
             cbClass.ValueMember="MALOP";
             cbClass.DisplayMember = "TENLOP";
+            ClassBUS.Instance.GetClassInfo(dgvClassList, id);
         }
 
-        private void btnNewStudentList_Click(object sender, EventArgs e)
+
+        void LoadNewStudentList()
         {
 
             StudentBUS.Instance.WatchNewStudent(dgvClassList);
@@ -56,13 +59,31 @@ namespace QuanLyHocSinh
             if (ClassBUS.Instance.InsertNewStudent(dgvClassList,malop))
             {
                 MessageBox.Show("Thêm thành công");
-                btnNewStudentList_Click(sender, e);
+            
+                LoadNewStudentList();
                 
             }
             else
             {
                 MessageBox.Show("Thêm không thành công");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadNewStudentList();
+        }
+
+        private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            string malop = cbClass.SelectedValue.ToString();
+            StudentBUS.Instance.LoadClassInfo(dgvClassList, malop);
+            ClassBUS.Instance.UpdateSiSo(txbSiSo,malop);
+            //string id = cbGrade.SelectedValue.ToString();
+            //ClassBUS.Instance.GetListClass(cbSiSo, id);
+            //cbSiSo.DisplayMember = "SISO";
+
         }
     }
 }

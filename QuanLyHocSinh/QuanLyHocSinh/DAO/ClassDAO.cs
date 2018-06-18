@@ -44,11 +44,18 @@ namespace QuanLyHocSinh.DAO
             }
             return listclass;
         }
-
-        public bool InsertNewStudent(Student student,string malop)
+        public int UpdateSiSo(string malop)
         {
-            string query = "INSERT INTO HOCSINH VALUES( @MaHS , @Hoten , @Gioitinh , @Ngaysinh , @Diachi , @Email , @Malop )";
-            object[] para = new object[] { student.Mahs, student.Hoten, student.Gioitinh, student.Ngaysinh, student.Diachi, student.Email, malop };
+            string query = "SELECT COUNT(MAHS) FROM HOCSINH WHERE MALOP = @Malop";
+            object[] para = new object[] { malop };
+            return (Int32.Parse(System.Convert.ToString(DataProvider.Instance.ExcuteScalar1(query, para))));
+            
+        }
+        public bool InsertNewStudent(string mahs, Student student)
+        {
+
+            string query = "UPDATE HOCSINH SET MALOP= @Malop WHERE MAHS = @OldMaHS";
+            object[] para = new object[] { student.Malop, mahs };
             if (DataProvider.Instance.ExcuteNonQuery(query, para) > 0)
             {
                 return true;

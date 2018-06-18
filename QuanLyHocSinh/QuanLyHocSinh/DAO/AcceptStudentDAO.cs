@@ -35,7 +35,7 @@ namespace QuanLyHocSinh.DAO
             return DataProvider.Instance.ExcuteQuery1("SELECT* FROM HOCSINH WHERE MALOP= @MALOP ",para);
 
         }
-
+     
 
 
         public bool Delete(string mahs)
