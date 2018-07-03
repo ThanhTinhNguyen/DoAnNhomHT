@@ -1,8 +1,8 @@
-1.M? thu m?c Database
-2.M? file DB_QuanLyHocSinh
-3.Copy v� t?o database tr�n SQL Server
-4.L?y chu?i k?t n?i tr�n SQL Server
-5.M? Thu m?c Source Code->QuanLyHocSinh
-6.M? file QuanLyHocSinh.sln
-7.M? class DataProvider.cs
-8.Thay chu?i k?t n?i ?ng v?i m�y dang ch?y.
+﻿1.Mở thư mục database
+2.Mở file DB_QuanLyHocSinh
+3.Copy và tạo database trên SQL Server
+4.Lấy chuỗi kết nối trên SQL Server
+5.Mở Thu mục Source Code
+6.Mở file QuanLyHocSinh.sln
+7.Mở class DataProvider.cs
+8.Thay chuỗi kết nối.
